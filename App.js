@@ -1,5 +1,5 @@
 import React from 'react';
-import { MovieDetail } from "./screens";
+import { MovieDetail, Levels,Points } from "./screens";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -25,6 +25,14 @@ const App = () => {
         <Stack.Screen
           name="MovieDetail"
           component={MovieDetail}
+        />
+           <Stack.Screen
+          name="Level"
+          component={Levels}
+        />
+           <Stack.Screen
+          name="Points"
+          component={Points}
         />
       </Stack.Navigator>
     </NavigationContainer>

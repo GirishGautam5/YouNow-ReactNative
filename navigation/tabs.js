@@ -1,9 +1,10 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
+import styles from "./styles";
 
 import { Home } from "../screens"
 import { COLORS, icons } from "../constants"
-
+import { Home,Levels,Profile,VideoScreen } from "../screens";
 import { TabIcon } from "../components"
 
 const Tab = createBottomTabNavigator()
@@ -13,16 +14,7 @@ const Tabs = () => {
         <Tab.Navigator
             tabBarOptions={{
                 showLabel: false,
-                style: {
-                    position: 'absolute',
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    elevation: 0,
-                    backgroundColor: COLORS.black,
-                    borderTopColor: "transparent",
-                    height: 100
-                }
+                style: styles.container
             }}
         >
             <Tab.Screen
@@ -39,7 +31,7 @@ const Tabs = () => {
             />
             <Tab.Screen
                 name="Play"
-                component={Home}
+                component={VideoScreen}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <TabIcon
@@ -51,7 +43,7 @@ const Tabs = () => {
             />
             <Tab.Screen
                 name="Search"
-                component={Home}
+                component={Levels}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <TabIcon
@@ -63,7 +55,7 @@ const Tabs = () => {
             />
             <Tab.Screen
                 name="Profile"
-                component={Home}
+                component={Profile}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <TabIcon
